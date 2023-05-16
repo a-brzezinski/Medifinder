@@ -91,7 +91,7 @@ const Navigation = () => {
 				<NavLink mobile href='/contact' onClick={() => setDisplay('none')}>
 					Contact
 				</NavLink>
-				<NavLink mobile href='/newsletter'>
+				<NavLink mobile href='/newsletter' onClick={() => setDisplay('none')}>
 					Newsletter
 				</NavLink>
 			</Flex>

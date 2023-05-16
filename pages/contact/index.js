@@ -7,6 +7,7 @@ import {
 	CardHeader,
 	Flex,
 	Heading,
+	Spacer,
 	Text,
 } from '@chakra-ui/react';
 
@@ -25,7 +26,12 @@ const ContactPage = () => {
 				flexDir={{ base: 'column', sm: 'column', lg: 'row' }}
 				alignItems='center'
 				h={{ base: '70vh', sm: '70vh', lg: 'auto' }}
-				justifyContent='space-around'
+				// justifyContent='space-between'
+				justifyContent={{
+					base: 'space-between',
+					md: 'space-around',
+					xl: 'space-around',
+				}}
 				mt='3em'>
 				<Card
 					align='center'
@@ -50,6 +56,7 @@ const ContactPage = () => {
 					</CardFooter>
 				</Card>
 				<Card
+					mt='2em'
 					align='center'
 					maxW='350px'
 					borderTop='8px'
