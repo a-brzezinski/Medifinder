@@ -1,7 +1,7 @@
 # Medifinder
 
 Medifinder allows users to browse profiles of specialist doctors and add comments. In addition, users have the option to sign up for the newsletter.
-Application uses SSR Server-Side Rendering 
+Application uses SSG Static Site Generation
 
 From the admin panel available under /panel the administrator has the ability to add and remove specialists.
 
