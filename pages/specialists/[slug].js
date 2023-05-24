@@ -20,10 +20,9 @@ const SpecialistPage = props => {
 
 export default SpecialistPage;
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 	const id = context.params.slug;
 	const client = await connectMongo();
-
 	const database = client.db();
 
 	const specialist = await database
@@ -34,5 +33,21 @@ export async function getServerSideProps(context) {
 		props: {
 			specialist: JSON.parse(JSON.stringify(specialist)),
 		},
+	};
+}
+
+export async function getStaticPaths() {
+	const client = await connectMongo();
+	const database = client.db();
+	const allSpecialists = await database
+		.collection('specialists')
+		.find()
+		.toArray();
+	const id = allSpecialists.map(specialist => specialist.path);
+	const paths = id.map(id => ({ params: { slug: id } }));
+
+	return {
+		paths: paths,
+		fallback: 'blocking',
 	};
 }

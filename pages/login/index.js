@@ -13,7 +13,7 @@ const LoginPage = props => {
 
 export default LoginPage;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const client = await connectMongo();
 
 	const database = client.db();
@@ -21,7 +21,6 @@ export async function getServerSideProps() {
 	const userFromDb = await database.collection('admins').findOne();
 
 	const user = JSON.parse(JSON.stringify(userFromDb));
-
 	return {
 		props: { user },
 	};
