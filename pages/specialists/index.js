@@ -9,13 +9,14 @@ const SpecialistsPage = props => {
 
 export default SpecialistsPage;
 
-export const getServerSideProps = async () => {
+export async function getStaticProps() {
 	const client = await connectMongo();
 	const db = client.db();
 	const specialistsFromDb = await db.collection('specialists').find().toArray();
 	const specialists = JSON.parse(JSON.stringify(specialistsFromDb));
 
 	return {
-		props: { specialists, revalidate: 5 },
+		props: { specialists },
+		revalidate: 30,
 	};
-};
+}
