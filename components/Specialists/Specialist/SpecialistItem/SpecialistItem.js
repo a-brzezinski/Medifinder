@@ -21,7 +21,8 @@ const SpecialistItem = props => {
 					mt='1.5em'
 					color='#065a60'
 					fontSize='1.8rem'
-					justifyContent='space-around'>
+					justifyContent='space-around'
+					flexDir={{ base: 'column', md: 'column', lg: 'row' }}>
 					<Text>{specialist.localization}</Text>
 					<Text>{specialist.specialization}</Text>
 					<Text>

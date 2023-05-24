@@ -7,7 +7,7 @@ export default function Home(props) {
 		<ScaleFade in='true'>
 			<Flex flexDir='column' align='center' mt='2em'>
 				<Box margin='2em'>
-					<Heading color='#40916c'>Welcome to MediFinder! {props.test}</Heading>
+					<Heading color='#319795'>Welcome to MediFinder! {props.test}</Heading>
 					<Text color='#081c15' fontSize='2rem'>
 						With us you will find the best specialists!
 					</Text>
