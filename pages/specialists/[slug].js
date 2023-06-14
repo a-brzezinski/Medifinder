@@ -33,6 +33,7 @@ export async function getStaticProps(context) {
 		props: {
 			specialist: JSON.parse(JSON.stringify(specialist)),
 		},
+		revalidate: 30,
 	};
 }
 
